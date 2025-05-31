@@ -369,13 +369,13 @@ include_once("footer.php");
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR7vrl5CUn0lf4vJMI4i7XI_Z3ZNE_5AE&callback=initMap&libraries=places" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" type="text/javascript"></script>
 
     <!-- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR7vrl5CUn0lf4vJMI4i7XI_Z3ZNE_5AE&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script> -->
     <!-- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtfn-Pez2Ss8ymAj1MNVTL7thkQWBBgbA&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script> -->
     <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
