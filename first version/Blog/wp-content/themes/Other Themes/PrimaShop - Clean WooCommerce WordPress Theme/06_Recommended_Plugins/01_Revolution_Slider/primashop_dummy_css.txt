@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+.tp-caption.prima_heading{
+			position: absolute; 
+			text-shadow: none; 
+			font-size: 60px; 
+			line-height: 60px; 
+			font-family: 'Oswald', sans-serif; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 
+		}
+
+.tp-caption.prima_subheading{
+			position: absolute; 
+			text-shadow: none; 
+			font-size: 24px; 
+			line-height: 24px; 
+			font-family: 'Oswald', sans-serif; 
+			padding: 0px 4px; 
+			padding-top: 1px;
+			margin: 0px; 
+			border-width: 0px; 
+			border-style: none; 
+		}

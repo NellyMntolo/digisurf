@@ -1,0 +1,354 @@
+ 					
+AddDefaultCharset utf-8
+IndexOptions +Charset=UTF-8
+#AllowEncodedSlashes On
+
+ErrorDocument 404 /error.php
+
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
+AddEncoding x-gzip .svgz
+
+<IfModule mod_deflate.c>
+    <filesMatch "\.(js|css|html|php|svg|jpeg|jpg|png|ico|woff|gif)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</IfModule>
+
+<ifmodule mod_expires.c>
+<Filesmatch "\.(js|css|html|php|svg|jpeg|jpg|png|ico|woff|gif)$">
+    ExpiresActive on
+    ExpiresDefault "access plus 1 year"
+</Filesmatch>
+</ifmodule>
+
+<IfModule pagespeed_module>
+    ModPageSpeed on
+    ModPagespeedRewriteLevel CoreFilters
+    ModPagespeedEnableFilters prioritize_critical_css
+    ModPagespeedEnableFilters defer_javascript
+    ModPagespeedEnableFilters sprite_images
+    ModPagespeedEnableFilters convert_png_to_jpeg,convert_jpeg_to_webp
+    ModPagespeedEnableFilters collapse_whitespace,remove_comments
+</IfModule>
+
+RewriteEngine on
+#Multi Language index show default language
+RewriteRule ^(/)?$ Home [NC,L]
+
+#Front-End
+RewriteRule ^newsite/Home/?$ /index.php [NC,L]
+RewriteRule ^Home/?$ /index.php [NC,L]
+RewriteRule ^Index/?$ /index.php [NC,L]
+
+RewriteRule ^News/?$ /Views/News.php [NC,L]
+RewriteRule ^Case_Studies/?$ /Views/AllEvents.php [NC,L]
+RewriteRule ^Technology/?$ /Views/Technology.php [NC,L]
+RewriteRule ^About/?$ /Views/About.php [NC,L]
+RewriteRule ^Capabilities/?$ /Views/Capabilities.php [NC,L]
+RewriteRule ^FAQ/?$ /Views/FAQ.php [NC,L]
+RewriteRule ^DownloadsCheck/?$ /Views/DownloadsConfirm.php [NC,L]
+RewriteRule ^Downloads/?$ /Views/Downloads.php [NC,L]
+RewriteRule ^Login/?$ /Views/Login.php [NC,L]
+RewriteRule ^SignUp/?$ /Views/SignUp.php [NC,L]
+RewriteRule ^Products/?$ /Views/Products.php [NC,L]
+RewriteRule ^ForgottenPassword/?$ /Views/Forgot1.php [NC,L]
+RewriteRule ^ForgottenPasswordSecurityCheck/?$ /Views/Forgot2.php [NC,L]
+RewriteRule ^ResetPassword/(.*)?$ /Views/ResetPassword.php?enumerator=$1 [NC,L]
+RewriteRule ^ResetSuccessful/?$ /Views/ResetPassword2.php [NC,L]
+RewriteRule ^Resetting/?$ /Controller/resetting_controller.php [NC,L]
+RewriteRule ^Search/?$ /Views/SearchResults.php [NC,L]
+RewriteRule ^Packages/?$ /Views/Packages.php [NC,L]
+RewriteRule ^CartReview/?$ /Views/CartReview.php [NC,L]
+RewriteRule ^CheckOut/?$ /Views/CheckOut.php [NC,L]
+RewriteRule ^48/?$ /Views/48.php [NC,L]
+RewriteRule ^48/Knowing/?$ /Views/48-KnowingB.php [NC,L]
+RewriteRule ^48/Participate/?$ /Views/48-Participate1.php [NC,L]
+RewriteRule ^48/Participates/?$ /Views/48-Participate2.php [NC,L]
+RewriteRule ^TermsAndConditions/?$ /Views/Terms.php [NC,L]
+RewriteRule ^Privacy/?$ /Views/Privacy.php [NC,L]
+RewriteRule ^Locations/?$ /Views/Locations.php [NC,L]
+RewriteRule ^Invite/?$ /Views/Invite1.php [NC,L]
+RewriteRule ^Invite2/?$ /Views/Invite2.php [NC,L]
+RewriteRule ^Invite3/?$ /Views/Invite3.php [NC,L]
+RewriteRule ^Welcome/?$ /Views/Invite4.php [NC,L]
+RewriteRule ^WhitePapersCheck/?$ /Views/WhitePaperConfirm.php [NC,L]
+RewriteRule ^WhitePapers/?$ /Views/WhitePapers.php [NC,L]
+RewriteRule ^Advantage/?$ /Views/Advantage.php [NC,L]
+RewriteRule ^FinalizeCheckOut/?$ /Views/FinalCheckOut.php [NC,L]
+RewriteRule ^Pay/?$ /Views/Pay.php [NC,L]
+RewriteRule ^Contact/?$ /Views/Contact.php [NC,L]
+RewriteRule ^TeamMembers/?$ /Views/SalesTeam.php [NC,L]
+RewriteRule ^InviteInfo/?$ /Views/invite_info.php [NC,L]
+RewriteRule ^ThankYou/?$ /Views/ThankYou.php [NC,L]
+RewriteRule ^CouponHistory/?$ /Views/CouponHistory.php [NC,L]
+RewriteRule ^PlayHarvest/?$ /UnityGame/index.html [NC,L]
+
+#Blog
+RewriteRule ^Blog/?$ /Blog [NC,L]
+
+
+#Accounts
+RewriteRule ^Accounts/Sales/?$ /Views/SalesAccount.php [NC,L]
+RewriteRule ^Accounts/Member/?$ /Views/MemberAccount.php [NC,L]
+RewriteRule ^Accounts/Regular/?$ /Views/RegularAccount.php [NC,L]
+RewriteRule ^LogoutAccount/?$ /Controller/logout.php [NC,L]
+
+RewriteRule ^Accounts/Sales/Order_History/?$ /Views/SalesOrderHistory.php [NC,L]
+RewriteRule ^Accounts/Sales/Settings/?$ /Views/SalesAccountSettings.php [NC,L]
+
+
+#Vanity GET URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^News/Articles/(.*)?$ /Views/NewsPage.php?blog_id=$1 [NC,L]
+RewriteRule ^Case_Studies/projects/(.*)?$ /Views/event.php?project_id=$1 [NC,L]
+RewriteRule ^Products/Product/(.*)?$ /Views/ProductsPage.php?product_id=$1 [NC,L]
+RewriteRule ^Capabilities/Capability/(.*)?$ /Views/Capability.php?workshop_id=$1 [NC,L]
+RewriteRule ^FAQ/Info/(.*)?$ /Views/FAQPage.php?faq_id=$1 [NC,L]
+RewriteRule ^Package/Category/(.*)?$ /Views/PackageCategory.php?category_url=$1 [NC,L]
+RewriteRule ^SinglePackage/(.*)?$ /Views/PackageSingle.php?package_url=$1 [NC,L]
+RewriteRule ^WhitePaper/(.*)?$ /Views/WhitePage.php?white_id=$1 [NC,L]
+RewriteRule ^event/Categories/(.*)?$ /Views/eventCategories.php?category_id=$1 [NC,L]
+RewriteRule ^Product/Categories/(.*)?$ /Views/ProductCategory.php?category_url=$1 [NC,L]
+RewriteRule ^WhitePaper/Categories/(.*)?$ /Views/WhitepaperCategories.php?category_id=$1 [NC,L]
+RewriteRule ^Coupon/(.*)?$ /Views/Coupon.php?coupon_url=$1 [NC,L]
+
+#double
+RewriteRule ^Products/Product/Item/(.*)?$ /Views/ProductsPage.php?product_id=$1$lang=$2 [QSA,NC,L]
+
+#Translate
+RewriteRule ^Case_Studies/Translate/?$ /Controller/translate_cases.php [NC,L]
+RewriteRule ^News/Translate/?$ /Controller/translate_news.php [NC,L]
+RewriteRule ^FAQs/Translate/?$ /Controller/translate_faqs.php [NC,L]
+RewriteRule ^Technologies/Translate/?$ /Controller/translate_solutions.php [NC,L]
+
+#Music
+RewriteRule ^Music/?$ /Controller/music_controller.php [NC,L]
+
+RewriteRule ^ContactMe/?$ /Controller/contact_controller.php [NC,L]
+RewriteRule ^Health/?$ /Controller/health_controller.php [NC,L]
+RewriteRule ^fetch_en/?$ /Controller/fetch_en.php [NC,L]
+RewriteRule ^fetch_zh/?$ /Controller/fetch_zh.php [NC,L]
+RewriteRule ^getcategory/?$ /Controller/product_categories.php [NC,L]
+RewriteRule ^getcategoryzh/?$ /Controller/categorieszh.php [NC,L]
+RewriteRule ^gettag/?$ /Controller/tags.php [NC,L]
+RewriteRule ^gettagzh/?$ /Controller/tagszh.php [NC,L]
+RewriteRule ^CheckProject/?$ /Controller/project_controller.php [NC,L]
+RewriteRule ^CheckArticle/?$ /Controller/blog_controller.php [NC,L]
+RewriteRule ^SolutionDownload/?$ /Controller/solution_download_controller.php [NC,L]
+RewriteRule ^FileDownload/?$ /Controller/solution_download_controller.php [NC,L]
+RewriteRule ^ProductCart/?$ /Controller/extra_cart_package_controller.php [NC,L]
+RewriteRule ^Currency/?$ /Controller/extra_currency_controller.php [NC,L]
+RewriteRule ^UnSet/?$ /Controller/unsetpromo_controller.php [NC,L]
+RewriteRule ^Done/?$ /Controller/order_controller.php [NC,L]
+RewriteRule ^InviteCheck/?$ /Controller/invite_check_controller.php [NC,L]
+RewriteRule ^InviteSuccess/?$ /Controller/invite_controller.php [NC,L]
+
+RewriteRule ^KnowingTest/?$ /Controller/48-knowing_controller.php [NC,L]
+RewriteRule ^EditAccountAll/?$ /Controller/48-participate_controller.php [NC,L]
+RewriteRule ^ParticipateTest/?$ /Controller/48-participate_controller.php [NC,L]
+
+#Back-end
+RewriteRule ^Admin/?$ /Admin/login.php [NC,L]
+RewriteRule ^Admin/Logout/?$ /Admin/logout.php [NC,L]
+RewriteRule ^Admin/Home/?$ /Admin/index.php [NC,L]
+RewriteRule ^Admin/Main/?$ /Admin/Views/Main.php [NC,L]
+RewriteRule ^Admin/BlogPage/?$ /Admin/Views/BlogPage.php [NC,L]
+RewriteRule ^Admin/Contact/?$ /Admin/Views/Contact.php [NC,L]
+RewriteRule ^Admin/About/?$ /Admin/Views/About.php [NC,L]
+RewriteRule ^Admin/Case_Studies/?$ /Admin/Views/CaseStudies.php [NC,L]
+RewriteRule ^Admin/News/?$ /Admin/Views/News.php [NC,L]
+RewriteRule ^Admin/FAQs/?$ /Admin/Views/FAQs.php [NC,L]
+RewriteRule ^Admin/Downloads/?$ /Admin/Views/Downloads.php [NC,L]
+RewriteRule ^Admin/Menu/?$ /Admin/Views/Menu.php [NC,L]
+RewriteRule ^Admin/Footer/?$ /Admin/Views/Footer.php [NC,L]
+RewriteRule ^Admin/Workshops/?$ /Admin/Views/Solutions.php [NC,L]
+RewriteRule ^Admin/48/?$ /Admin/Views/48.php [NC,L]
+RewriteRule ^Admin/CartModule/?$ /Admin/Views/CartModule.php [NC,L]
+RewriteRule ^Admin/Package/?$ /Admin/Views/Package.php [NC,L]
+RewriteRule ^Admin/Invite/?$ /Admin/Views/Invite.php [NC,L]
+RewriteRule ^Admin/TermsPrivacy/?$ /Admin/Views/TermsPrivacy.php [NC,L]
+RewriteRule ^Admin/Stores/?$ /Admin/Views/Location.php [NC,L]
+RewriteRule ^Admin/Product/?$ /Admin/Views/Product.php [NC,L]
+RewriteRule ^Admin/ThankYou/?$ /Admin/Views/ThankYou.php [NC,L]
+
+#ADD
+RewriteRule ^Admin/AddWorkshop/?$ /Admin/Views/AddWorkshop.php [NC,L]
+RewriteRule ^Admin/AddFAQ/?$ /Admin/Views/AddFAQ.php [NC,L]
+RewriteRule ^Admin/AddEvent/?$ /Admin/Views/AddEvent.php [NC,L]
+RewriteRule ^Admin/AddArticles/?$ /Admin/Views/AddNews.php [NC,L]
+RewriteRule ^Admin/AddWhitePapers/?$ /Admin/Views/AddWhitePapers.php [NC,L]
+
+#EDIT
+RewriteRule ^Admin/EditWorkshop/?$ /Admin/Views/EditWorkshop.php [NC,L]
+RewriteRule ^Admin/EditFAQ/?$ /Admin/Views/EditFAQ.php [NC,L]
+RewriteRule ^Admin/EditEvent/?$ /Admin/Views/EditEvent.php [NC,L]
+RewriteRule ^Admin/EditNews/?$ /Admin/Views/EditNews.php [NC,L]
+RewriteRule ^Admin/EditWhitePapers/?$ /Admin/Views/EditWhitePapers.php [NC,L]
+RewriteRule ^Admin/StoresEdit/?$ /Admin/Views/EditLocation.php [NC,L]
+
+#All 
+RewriteRule ^Admin/ViewAllWorkshops/?$ /Admin/Views/AllWorkshops.php [NC,L]
+RewriteRule ^Admin/ViewAllFAQs/?$ /Admin/Views/AllFAQs.php [NC,L]
+RewriteRule ^Admin/ViewAllEvents/?$ /Admin/Views/AllEvents.php [NC,L]
+RewriteRule ^Admin/ViewAllArticles/?$ /Admin/Views/AllNews.php [NC,L]
+RewriteRule ^Admin/ViewAllWhitePapers/?$ /Admin/Views/AllWhitePapers.php [NC,L]
+
+
+RewriteRule ^Admin/ViewAllProjects/?$ /Admin/Views/AllProjects.php [NC,L]
+RewriteRule ^Admin/ViewAllBlogs/?$ /Admin/Views/AllBlogs.php [NC,L]
+RewriteRule ^Admin/BlogCreate/?$ /Admin/Views/CreateBlog.php [NC,L]
+RewriteRule ^Admin/BlogEdit/?$ /Admin/Views/EditBlog.php [NC,L]
+
+
+RewriteRule ^Admin/Profile/?$ /Admin/Views/Profile.php [NC,L]
+
+#RewriteRule ^Admin/eventCategories/?$ /Admin/Views/Categories.php [NC,L]
+RewriteRule ^Admin/eventCategories/?$ /Admin/Views/AlleventCategories.php [NC,L]
+RewriteRule ^Admin/WhitePaperCategories/?$ /Admin/Views/AllWhitePaperCategories.php [NC,L]
+RewriteRule ^Admin/ProductCategories/?$ /Admin/Views/AllProductCategories.php [NC,L]
+RewriteRule ^Admin/PackageCategories/?$ /Admin/Views/AllPackageCategories.php [NC,L]
+RewriteRule ^Admin/NewPackageCategory/?$ /Admin/Views/NewPackageCategory.php [NC,L]
+RewriteRule ^Admin/NewProductCategory/?$ /Admin/Views/NewProductCategory.php [NC,L]
+RewriteRule ^Admin/NeweventCategory/?$ /Admin/Views/NeweventCategory.php [NC,L]
+RewriteRule ^Admin/NewWhitePaperCategory/?$ /Admin/Views/NewWhitePaperCategory.php [NC,L]
+RewriteRule ^fetch_category/?$ /Admin/Controller/editcategory.php [NC,L]
+RewriteRule ^fetch_tag/?$ /Admin/Controller/edittag.php [NC,L]
+RewriteRule ^fetch_package/?$ /Admin/Controller/editpackagecategory.php [NC,L]
+RewriteRule ^fetch_whitepaper/?$ /Admin/Controller/editwhitepapercategory.php [NC,L]
+
+RewriteRule ^Admin/AllMain/?$ /Admin/Controller/main_controller.php [NC,L]
+RewriteRule ^Admin/AllAbout/?$ /Admin/Controller/about_controller.php [NC,L]
+RewriteRule ^Admin/AllWeDo/?$ /Admin/Controller/wedo_controller.php [NC,L]
+RewriteRule ^Admin/AllWeThink/?$ /Admin/Controller/wethink_controller.php [NC,L]
+RewriteRule ^Admin/AllFAQs/?$ /Admin/Controller/faq_controller.php [NC,L]
+RewriteRule ^Admin/AllWeEdit/?$ /Admin/Controller/project_controller.php [NC,L]
+RewriteRule ^Admin/AllFooter/?$ /Admin/Controller/footer_controller.php [NC,L]
+RewriteRule ^Admin/AllMenu/?$ /Admin/Controller/menu_controller.php [NC,L] 
+RewriteRule ^Admin/AllEvents/?$ /Admin/Controller/event_controller.php [NC,L] 
+RewriteRule ^Admin/AllLog-in/?$ /Admin/Controller/log-in_controller.php [NC,L] 
+RewriteRule ^Admin/AllSign-up/?$ /Admin/Controller/sign-up_controller.php [NC,L] 
+RewriteRule ^Admin/AllCartModule/?$ /Admin/Controller/cart_module_controller.php [NC,L] 
+RewriteRule ^Admin/AllWhitePapers/?$ /Admin/Controller/white_paper_controller.php [NC,L]
+RewriteRule ^Admin/All48/?$ /Admin/Controller/48_controller.php [NC,L]
+RewriteRule ^Admin/AllTermsPrivacy/?$ /Admin/Controller/terms_controller.php [NC,L]
+RewriteRule ^Admin/AllInvite/?$ /Admin/Controller/invite_controller.php [NC,L]
+RewriteRule ^Admin/AllLocations/?$ /Admin/Controller/location_controller.php [NC,L]
+RewriteRule ^Admin/AllProduct/?$ /Admin/Controller/product_controller.php [NC,L]
+RewriteRule ^Admin/GetStorageProducts/?$ /Admin/Controller/storage_calc_controller.php [NC,L]
+
+RewriteRule ^Admin/AllDownloads/?$ /Admin/Controller/main_downloads_controller.php [NC,L] 
+RewriteRule ^Admin/AllContact/?$ /Admin/Controller/contact_controller.php [NC,L]
+RewriteRule ^Admin/AllThePartners/?$ /Admin/Controller/thepartners_controller.php [NC,L]
+RewriteRule ^Admin/AllArticles/?$ /Admin/Controller/blog_controller.php [NC,L]
+RewriteRule ^Admin/AllCategories/?$ /Admin/Controller/category_case_study_controller.php [NC,L]
+RewriteRule ^Admin/AllWhitePaperCategories/?$ /Admin/Controller/white_paper_category_controller.php [NC,L]
+RewriteRule ^Admin/AllProductCategories/?$ /Admin/Controller/product_categories_controller.php [NC,L]
+RewriteRule ^Admin/AllPackageCategories/?$ /Admin/Controller/package_categories_controller.php [NC,L]
+RewriteRule ^Admin/AllProfile/?$ /Admin/Controller/profile_controller.php [NC,L]
+RewriteRule ^Admin/AllWorkshops/?$ /Admin/Controller/solution_controller.php [NC,L]
+RewriteRule ^Admin/AllPackage/?$ /Admin/Controller/package_controller.php [NC,L]
+RewriteRule ^Admin/Promo/?$ /Admin/Controller/promo_controller.php [NC,L]
+RewriteRule ^Admin/OrderStatus/?$ /Admin/Controller/order_status_controller.php [NC,L]
+
+RewriteRule ^Admin/SortSolution/?$ /Admin/Controller/sort_solution_controller.php [NC,L]
+RewriteRule ^Admin/SortFAQ/?$ /Admin/Controller/sort_faq_controller.php [NC,L]
+RewriteRule ^Admin/SortCase/?$ /Admin/Controller/sort_case_controller.php [NC,L]
+
+RewriteRule ^Admin/Sort/?$ /Admin/Controller/sort_project_controller.php [NC,L]
+RewriteRule ^Admin/SortNews/?$ /Admin/Controller/sort_news_controller.php [NC,L]
+
+#Add/Remove Categories "project edit"
+RewriteRule ^Admin/AddCategory/?$ /Admin/Controller/project_addcategory_controller.php [NC,L]
+RewriteRule ^Admin/RemoveCategory/?$ /Admin/Controller/project_removecategory_controller.php [NC,L]
+RewriteRule ^Admin/AddTag/?$ /Admin/Controller/blog_addtag_controller.php [NC,L]
+RewriteRule ^Admin/RemoveTag/?$ /Admin/Controller/blog_removetag_controller.php [NC,L]
+RewriteRule ^Admin/AddCase/?$ /Admin/Controller/solution_addcase_controller.php [NC,L]
+RewriteRule ^Admin/RemoveCase/?$ /Admin/Controller/solution_removecase_controller.php [NC,L]
+
+RewriteRule ^Admin/AddProductCat/?$ /Admin/Controller/product_addproductcat_controller.php [NC,L]
+RewriteRule ^Admin/RemoveProductCat/?$ /Admin/Controller/product_removeproductcat_controller.php [NC,L]
+RewriteRule ^Admin/AddPackageCat/?$ /Admin/Controller/package_addpackagecat_controller.php [NC,L]
+RewriteRule ^Admin/RemovePackageCat/?$ /Admin/Controller/package_removepackagecat_controller.php [NC,L]
+
+
+RewriteRule ^Admin/SortCategory/?$ /Admin/Controller/sort_category_controller.php [NC,L]
+RewriteRule ^Admin/SortTag/?$ /Admin/Controller/sort_tag_controller.php [NC,L]
+
+
+RewriteRule ^Admin/Lock/?$ /Admin/unlocktest.php [NC,L]
+RewriteRule ^Admin/Unlock?$ /Admin/Controller/login_controller.php [NC,L]
+
+
+RewriteRule ^Admin/Calendar/?$ /Admin/Views/Calendar.php [NC,L]
+RewriteRule ^Admin/Chat/?$ /Admin/Controller/chat_controller.php [NC,L]
+RewriteRule ^Admin/ChatNotify/?$ /Admin/Controller/chat_notify_controller.php [NC,L]
+RewriteRule ^Admin/Chats/?$ /Admin/Views/Chat.php [NC,L]
+RewriteRule ^Admin/Demo/?$ /Admin/Views/Demo.php [NC,L]
+RewriteRule ^Admin/SortDemo/?$ /Admin/Controller/sort_demo_controller.php [NC,L]
+
+
+#Shop
+RewriteRule ^Admin/Shop/?$ /Admin/Views/Shop.php [NC,L]
+#RewriteRule ^Admin/Shop/Analytics/?$ /Admin/Views/ShopAnalytics.php [NC,L]
+RewriteRule ^Admin/Shop/OrderNotifications/?$ /Admin/Views/ShopOrderNotifications.php [NC,L]
+RewriteRule ^Admin/Shop/CustomerNotifications/?$ /Admin/Views/ShopCustomerNotifications.php [NC,L]
+RewriteRule ^Admin/Shop/AllProducts/?$ /Admin/Views/ShopAllProducts.php [NC,L]
+RewriteRule ^Admin/Shop/AllCustomers/?$ /Admin/Views/ShopAllCustomers.php [NC,L]
+RewriteRule ^Admin/Shop/AllCoupons/?$ /Admin/Views/ShopAllCoupons.php [NC,L]
+RewriteRule ^Admin/Shop/AllGroups/?$ /Admin/Views/ShopAllGroups.php [NC,L]
+RewriteRule ^Admin/Shop/AllOrders/?$ /Admin/Views/ShopAllOrders.php [NC,L]
+RewriteRule ^Admin/Shop/AllCurrencies/?$ /Admin/Views/ShopAllCurrency.php [NC,L]
+RewriteRule ^Admin/Shop/NewCustomer/?$ /Admin/Views/ShopNewCustomer.php [NC,L]
+RewriteRule ^Admin/Shop/NewGroup/?$ /Admin/Views/ShopNewGroup.php [NC,L]
+RewriteRule ^Admin/Shop/NewOrder/?$ /Admin/Views/ShopNewOrder.php [NC,L]
+RewriteRule ^Admin/Shop/NewCoupon/?$ /Admin/Views/ShopNewCoupon.php [NC,L]
+RewriteRule ^Admin/Shop/NewProduct/?$ /Admin/Views/ShopNewProduct.php [NC,L]
+RewriteRule ^Admin/Shop/NewPackage/?$ /Admin/Views/ShopNewPackage.php [NC,L]
+RewriteRule ^Admin/Shop/NewCurrency/?$ /Admin/Views/ShopNewCurrency.php [NC,L]
+RewriteRule ^Admin/Shop/ViewProduct/(.*)?$ /Admin/Views/ShopViewProduct.php?product_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/Storage/?$ /Admin/Views/Storage.php [NC,L]
+RewriteRule ^Admin/Shop/Inventory/?$ /Admin/Views/Inventory.php [NC,L]
+RewriteRule ^Admin/Preferences/?$ /Admin/Views/Preferences.php [NC,L]
+RewriteRule ^Admin/Shop/ViewCustomer/(.*)?$ /Admin/Views/ShopViewCustomer.php?customer_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/ViewGroup/(.*)?$ /Admin/Views/ShopViewGroup.php?group_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/ViewOrder/(.*)?$ /Admin/Views/ShopViewOrder.php?order_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/EditCustomer/(.*)?$ /Admin/Views/ShopEditCustomer.php?customer_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/EditGroup/(.*)?$ /Admin/Views/ShopEditGroup.php?group_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/EditPackage/(.*)?$ /Admin/Views/ShopEditPackage.php?package_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/AllCustomers_Print/?$ /Admin/Views/ShopAllCustomers_Print.php [NC,L]
+RewriteRule ^Admin/Shop/EditCurrency/(.*)?$ /Admin/Views/ShopEditCurrency.php?currency_id=$1 [NC,L]
+RewriteRule ^Admin/Shop/EditCoupons/(.*)?$ /Admin/Views/ShopEditCoupon.php?coupon_id=$1 [NC,L]
+RewriteRule ^Admin/EditPackageCategories/(.*)?$ /Admin/Views/EditPackageCategories.php?category_url=$1$lang=$2 [QSA,NC,L]
+RewriteRule ^Admin/EditProductCategories/(.*)?$ /Admin/Views/EditProductCategories.php?category_url=$1$lang=$2 [QSA,NC,L]
+RewriteRule ^Admin/EditEventCategories/(.*)?$ /Admin/Views/EditEventCategories.php?category_url=$1$lang=$2 [QSA,NC,L]
+RewriteRule ^Admin/EditWhitePaperCategories/(.*)?$ /Admin/Views/EditWhitePaperCategories.php?category_url=$1$lang=$2 [QSA,NC,L]
+
+#Controllers
+RewriteRule ^Admin/AllShopProduct/?$ /Admin/Controller/shop_product_controller.php [NC,L]
+RewriteRule ^Admin/AllShopGroup/?$ /Admin/Controller/shop_group_controller.php [NC,L]
+RewriteRule ^Admin/AllShopCustomer/?$ /Admin/Controller/shop_customer_controller.php [NC,L]
+RewriteRule ^Admin/AllShopPackage/?$ /Admin/Controller/shop_package_controller.php [NC,L]
+RewriteRule ^Admin/AllShopCurrency/?$ /Admin/Controller/shop_currency_controller.php [NC,L]
+RewriteRule ^Admin/AllShopCoupons/?$ /Admin/Controller/shop_coupon_controller.php [NC,L]
+RewriteRule ^Admin/AllShopStorage/?$ /Admin/Controller/storage_controller.php [NC,L]
+RewriteRule ^Admin/AllShopInventory/?$ /Admin/Controller/inventory_controller.php [NC,L]
+RewriteRule ^Admin/BackCart/?$ /Admin/Controller/back_cart_controller.php [NC,L]
+RewriteRule ^Admin/BackCartCustomer/?$ /Admin/Controller/back_cart_customer_controller.php [NC,L]
+
+#notifications
+RewriteRule ^Admin/OrderNotificationsOne/?$ /Admin/Controller/order_notification_one_controller.php [NC,L]
+RewriteRule ^Admin/OrderNotificationsTwo/?$ /Admin/Controller/order_notification_two_controller.php [NC,L]
+RewriteRule ^Admin/CustomerNotificationsOne/?$ /Admin/Controller/customer_notification_one_controller.php [NC,L]
+RewriteRule ^Admin/CustomerNotificationsTwo/?$ /Admin/Controller/customer_notification_two_controller.php [NC,L]
+RewriteRule ^Admin/ProductNotificationsOne/?$ /Admin/Controller/product_notification_one_controller.php [NC,L]
+RewriteRule ^Admin/ProductNotificationsTwo/?$ /Admin/Controller/product_notification_two_controller.php [NC,L]
+RewriteRule ^Admin/PackageNotificationsOne/?$ /Admin/Controller/package_notification_one_controller.php [NC,L]
+RewriteRule ^Admin/PackageNotificationsTwo/?$ /Admin/Controller/package_notification_two_controller.php [NC,L]
+
+
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . index.php

@@ -1,0 +1,21 @@
+HOW TO IMPORT DUMMY CONTENT XML FILE
+
+1) Install and Ativate both PrimaShop (child) theme and WooCommerce plugin.
+
+2) Download the Main File of PrimaShop theme on your ThemeForest download page. 
+Extract the ZIP, and you can find the XML file on 05_Dummy_Data folder
+
+3) Login to your WordPress Dashboard, and go to Tools – Import page, 
+click Wordpress, and choose the XML file above (primashop_dummy_content_noimage.xml)
+to start importing the demo data.
+
+4) (optional) Go to Settings – Reading page and choose “Homepage 1” for the Front Page
+
+5) (optional) Go to Appearance – Menus and choose Header Menu and Footer Menu on “Theme Locations” metabox.
+
+Note: Most of demo images are not included in the XML file because these are for preview purpose only.
+
+HOW TO IMPORT DUMMY SETTINGS JSON FILE
+
+Go to Appearance - Theme Settings page and click Settings tab. 
+You will see Import Settings box and you can upload the primashop_dummy_settings.json file

@@ -1,0 +1,4 @@
+HOW TO IMPORT DESIGN SETTINGS JSON FILE
+
+Go to Appearance - Theme Settings page and click Settings tab. 
+You will see Import Settings box and you can upload the json file.

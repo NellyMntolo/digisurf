@@ -1,0 +1,66 @@
+
+http://www.youtube.com/watch?v=R4q_p74RskY
+Introduction To WooCommerce Plugin
+
+http://www.youtube.com/watch?v=XzrWOkNbdIA
+[For New WP Site] Working With Dummy Content
+
+http://www.youtube.com/watch?v=WKxyqgokPH0
+[For Existing WP Site] Installing PrimaShop For WooCommerce WordPress Theme
+
+http://www.youtube.com/watch?v=VVfLVhkew4A
+Working With Design Settings (Customizer)
+
+http://www.youtube.com/watch?v=qstC0nzRNgo
+Working With Ecommerce Settings
+
+http://www.youtube.com/watch?v=CzV638uPTfU
+Working With Layout
+
+http://www.youtube.com/watch?v=S5180X1gu0I
+Working With Blog Page
+
+http://www.youtube.com/watch?v=3-GdX1VdqEc
+Working With Static Homepage
+
+http://www.youtube.com/watch?v=n1PG0Ibka4c
+Working With Top Navigaton
+
+http://www.youtube.com/watch?v=XXf0Egmd7Z8
+Working With Header Content
+
+http://www.youtube.com/watch?v=rzsYTQSLkpA
+Working With Featured Header
+
+http://www.youtube.com/watch?v=dWhmE_wrk_0
+Working With Header Call To Action
+
+http://www.youtube.com/watch?v=NsjkpGlGGsk
+Working With Footer Widgets
+
+http://www.youtube.com/watch?v=NRUErymePAY
+Working With Footer Content
+
+http://www.youtube.com/watch?v=c81rs7DbnPg
+Working With Sidebars
+
+http://www.youtube.com/watch?v=GydECUxd2lk
+Working With Simple Product
+
+http://www.youtube.com/watch?v=BuQxW0WmlMc
+Working With Product Attributes
+
+http://www.youtube.com/watch?v=mZAob7dV4oo
+Working With Variable Product (Variations)
+
+http://www.youtube.com/watch?v=6HIhknVefZ4
+Working With Google Fonts
+
+http://www.youtube.com/watch?v=fOv4JbSsxaA
+Working With Translation / Localization
+
+http://www.youtube.com/watch?v=GF52ZZqUNZI
+Working With Revolution Slider
+
+http://www.youtube.com/watch?v=J0oyKLGdry4
+Working With Revolution Slider (Full Screen Mode)
