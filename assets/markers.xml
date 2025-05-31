@@ -1,0 +1,9 @@
+<markers>
+    <marker id="1" name="Daan Station" address="106台北市大安區和平東路三段208號" lat="25.0326813" lng="121.5375794" type="mrt"/>
+    <marker id="2" name="Xinyi Anhe" address="106台北市大安區和平東路三段208號" lat="25.032681" lng="121.5375794" type="mrt"/>
+    <marker id="3" name="Tonghua Street" address="106台北市大安區和平東路三段208號" lat="25.0310059" lng="121.545874" type="trash truck"/>
+    <marker id="4" name="some hospital" address="106台北市大安區和平東路三段208號" lat="25.0345522" lng="121.5463725" type="bus stop"/>
+    <marker id="5" name="SYS Memorial" address="106台北市大安區和平東路三段208號" lat="25.0345522" lng="121.5463725" type="bus stop"/>
+    <marker id="6" name="Flower Market" address="106台北市大安區和平東路三段208號" lat="25.0350619" lng="121.5428317" type="bus stop"/>
+    <marker id="7" name="Taipei Lioujhangli Post Office" address="106台北市大安區和平東路三段208號" lat="25.0350619" lng="121.5428317" type="mrt"/>
+</markers>

@@ -1,0 +1,5 @@
+<element> 
+   <![CDATA[ 
+      <?php echo date('Y'); ?>
+   ]]>
+</element>

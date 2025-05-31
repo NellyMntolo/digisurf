@@ -1,0 +1,159 @@
+$sqlprojecten = 'SELECT * FROM tkticket WHERE tk_Member ="'.$teacher_id.'" AND WEEKOFYEAR(tk_BegDate) = WEEKOFYEAR('.$week.') ORDER BY tk_BegDate ASC ';
+                        $retvalprojecten = mysql_query( $sqlprojecten, $conn );                 
+                             if(! $retvalprojecten )
+                             {
+                                die('Could not get data: ' . mysql_error());
+                             }
+
+                        while($rowprojecten = mysql_fetch_array($retvalprojecten, MYSQL_ASSOC)){
+                            
+                            $startingdate = $rowprojecten['tk_BegDate'];
+                            $endingdate = $rowprojecten['tk_ExpDate'];
+                            $member = $rowprojecten['tk_Member'];
+
+                            $startdate = date_create($rowprojecten['tk_BegDate']);
+                            $starttime = date_format($startdate, 'H:i');
+                            $db_day = date_format($startdate, 'm-d');
+
+                            
+                            $test = date_format($startdate, 'Y-m-d');
+
+                            echo getWeekday($test); // returns 4
+                            
+
+                            $enddate = date_create($rowprojecten['tk_ExpDate']);
+                            $endtime = date_format($enddate, 'H:i');
+
+                            $class_day = date_format($startdate, 'd');
+
+                        $sqlmember = 'SELECT * FROM cormember WHERE ct_No ="'.$member.'" Limit 1';
+                        $retvalmember = mysql_query( $sqlmember, $conn );                 
+                             if(! $retvalmember )
+                             {
+                                die('Could not get data: ' . mysql_error());
+                             }
+                        $rowmember = mysql_fetch_array($retvalmember, MYSQL_ASSOC);
+                        $memberName = $rowmember['ct_Name'];
+
+                        $sqltimetable = 'SELECT * FROM tktimetable WHERE tt_Teacher ="'.$member.'" AND WEEKOFYEAR(tt_Date) = WEEKOFYEAR('.$week.')';//AND tt_Date ="'.$startingdate.'" AND tt_Time_e ="'.$endingdate.'"
+                        $retvaltimetable = mysql_query( $sqltimetable, $conn );                 
+                             if(! $retvaltimetable )
+                             {
+                                die('Could not get data: ' . mysql_error());
+                             } 
+
+                        $rowtimetable = mysql_fetch_array($retvaltimetable, MYSQL_ASSOC);
+                        $classnumber = $rowtimetable['tt_Class'];
+                        $classguid = $rowtimetable['tt_Guid'];
+                        $classbooking = $rowtimetable['tt_NeedBooking'];
+                        $tt_Date = $rowtimetable['tt_Date'];
+                        $tt_Time_e = $rowtimetable['tt_Time_e'];
+
+                        $sqlclasses = 'SELECT * FROM corclasses WHERE cc_No ="'.$classnumber.'" ';
+                        $retvalclasses = mysql_query( $sqlclasses, $conn );                 
+                             if(! $retvalclasses )
+                             {
+                                die('Could not get data: ' . mysql_error());
+                             } 
+
+                        $rowclasses = mysql_fetch_array($retvalclasses, MYSQL_ASSOC);
+                        $classname = $rowclasses['cc_Name'];  
+                        $classtime = $rowclasses['cc_Times'];
+                        $classunit = $rowclasses['cc_Unit'];
+                        $classneedbooking = $rowclasses['cc_Needbooking'];
+                        $classremark = $rowclasses['cc_Remark'];
+
+
+                        //if( strtotime($tt_Time_e) > strtotime('now') ) { echo 'it has passed';}
+
+                        if(getWeekday($test) == 1){
+
+                          $result1 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+
+                        if(getWeekday($test) == 2){
+
+                          $result2 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+                        if(getWeekday($test) == 3){
+
+                          $result3 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+                        if(getWeekday($test) == 4){
+
+                          $result4 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+                        if(getWeekday($test) == 5){
+
+                          $result5 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+                        if(getWeekday($test) == 6){
+
+                          $result6 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }
+
+                        if(getWeekday($test) == 7){
+
+                          $result7 .='<a href="#" class="class" data-toggle="modal" data-target="#myLogin">
+                                                  <div>
+                                                    <p>'.$starttime.' - '.$endtime.'</p>
+                                                    <p>45mins</p>
+                                                    <p class="sport">'.$classname.'</p>
+                                                    <p class="name">'.$memberName.'</p>
+                                                  </div>
+                                                </a>';
+                         
+                        }

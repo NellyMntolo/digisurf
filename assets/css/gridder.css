@@ -1,0 +1,589 @@
+@charset "UTF-8";
+/* CSS Document */
+/* --------------------------------
+
+Grid
+
+-------------------------------- */
+.thnk-wrapper {
+    width: 100%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+}
+
+/**********************grid.css**********************/
+
+@media (max-width: 540px) {
+    .thnk-wrapper-index {
+        width: 100%;
+        height: auto;
+        max-height: 100px !important;
+        float: left;
+        overflow: hidden;
+    }
+}
+
+/**********************grid.css**********************/
+
+.thnk-container {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    position: relative;
+    margin: 0px auto 90px auto;
+    padding: 0px 40px;
+}
+
+.thnk-container2 {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    position: relative;
+    margin: 0px auto 0px auto;
+    padding: 0px 40px 20px 40px;
+}
+
+.thnk-restrict {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+.thnk-grid1-4 {
+    width: 25%;
+    float: left;
+    height: auto;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+
+.thnk-grid1-3 {
+    width: 33.333%;
+    float: left;
+    height: auto;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+
+.thnk-prod-grid {
+    width: 20%;
+    float: left;
+    overflow: hidden !important;
+    height: auto;
+    padding: 0px 0px !important;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .thnk-prod-grid {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .thnk-prod-grid {
+        width: 33%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .thnk-grid1-4 {
+        width: 50%;
+        float: left;
+        height: auto;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .thnk-grid1-4 {
+        width: 50%;
+        float: left;
+        height: auto;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+    }
+
+    .thnk-grid1-3 {
+        width: 50%;
+        float: left;
+        height: auto;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+    }
+
+    .thnk-prod-grid {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .thnk-grid1-4 {
+        width: 100%;
+        float: left;
+        height: auto;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+    }
+
+    .thnk-container {
+        padding: 0px 20px;
+    }
+
+    .thnk-container2 {
+        padding: 0px 20px;
+    }
+
+    .thnk-grid1-3 {
+        width: 100%;
+        float: left;
+        height: auto;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+    }
+
+    .thnk-prod-grid {
+        width: 100%;
+    }
+}
+
+.alt-color {
+    background: #00BAB3 !important;
+}
+
+.alt-color1 {
+    background: #d9d8d5 !important;
+}
+
+.alt-color-in {
+    color: #4c4e56 !important;
+}
+
+.colorpartner {
+    color: #4c4e56 !important;
+}
+
+.gridder {
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+}
+
+.gridder2 {
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+}
+
+.gridder-list {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    text-align: center;
+    margin: 10px 10px;
+    padding: 20px;
+}
+
+.gridder-person-container {
+    width: 100%;
+    height: auto;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.gridder-person-img {
+    width: 200px;
+    height: 260px;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    z-index: 2
+}
+
+.gridder-person-img img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.gridder-person-img2 {
+    width: 200px;
+    height: 260px;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+}
+
+.gridder-person-img2 img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.gridder-person-img3 {
+    width: 200px;
+    height: 260px;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+}
+
+.gridder-person-img3 img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.gridder-person-container .gridder-person-img img {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.gridder-person-container:hover .gridder-person-img2 img {
+    opacity: 1;
+}
+
+.gridder-person-container .gridder-person-img2 img {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.gridder-person-container:hover .gridder-person-img img {
+    opacity: 0;
+}
+
+.hasSelectedItem .gridder-list.selectedItem .gridder-person-container .gridder-person-img2 img {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.hasSelectedItem .gridder-list.selectedItem .gridder-person-container .gridder-person-img img {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.gridder-person-container p {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 240px;
+    margin-bottom: 5px;
+}
+
+.gridder-person-container h3 {
+    width: 100%;
+    height: auto;
+    float: left;
+    font-size: 23px;
+}
+
+.gridder-wrapper {
+    width: 100%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    padding-bottom: 70px;
+}
+
+.gridder-show {
+    display: block;
+    float: left;
+    width: 200%;
+    position: relative;
+    padding-top: 0px;
+    color: #fff;
+    -webkit-transform: translateX(-25%);
+    -moz-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    -o-transform: translateX(-25%);
+    transform: translateX(-25%);
+}
+
+.gridder-show-in {
+    max-width: 800px !important;
+    position: relative !important;
+    padding-top: 60px;
+    z-index: 3;
+}
+
+.gridder-show.loading {
+    background: # url("../images/loading-spin.svg") no-repeat center;
+}
+
+.gridder-content {
+    display: none
+}
+
+.gridder-list:nth-child(n) {
+    margin-bottom: 1%;
+}
+
+.gridder-list:nth-of-type(6n) {
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.gridder-navigation.gridder-nav.disabled {
+    opacity: .5;
+}
+
+.gridder-list {
+    cursor: pointer;
+}
+
+.gridder-list:hover {
+    opacity: 1;
+}
+
+.hasSelectedItem .gridder-list {
+    opacity: 0.5;
+}
+
+.hasSelectedItem .gridder-list.selectedItem {
+    opacity: 1;
+}
+
+.gridder-padding {
+    width: 100%;
+    height: auto;
+    float: left;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+}
+
+.gridder-show-in {
+    max-width: 800px !important;
+    position: relative !important;
+    padding: 80px 20px 60px 20px;
+}
+
+.gridder-show-in h3 {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 23px;
+    line-height: 1.4em;
+}
+
+.gridder-show-in p {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.gridder-show-in-links {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.gridder-show-in-links ul {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.gridder-show-in-links ul li {
+    width: 100%;
+    height: auto;
+    float: left;
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    position: relative;
+}
+
+.gridder-show-in-links ul li:before {
+    content: url(../images/list.svg);
+    width: 10px !important;
+    position: absolute;
+    left: -20px;
+    top: -6px;
+}
+
+.gridder-show-in-buttons {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-left: -0px;
+}
+
+.gridder-show-in-buttons a {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.in-button2 {
+    margin-left: 20px
+}
+
+.gridder-navigation {
+    position: absolute;
+    width: 130px;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-left: auto;
+    z-index: 2000;
+    left: 0px;
+    right: 400px;
+}
+
+.gridder-navigation a {
+    display: inline-block;
+    width: 34px !important;
+    height: 34px !important;
+    color: #000;
+    text-decoration: none;
+    margin-right: 0px;
+    transition: all .3s ease-in-out;
+}
+
+.gridder-close {
+    width: 40px !important;
+    height: 34px !important;
+    cursor: pointer !important;
+    float: right;
+    background: url(../images/Close1.svg) no-repeat center center !important;
+    background-size: 30px 30px !important;
+}
+
+.gridder-nav.prev {
+    width: 40px !important;
+    height: 34px !important;
+    cursor: pointer !important;
+    background: url(../images/prev1.svg) no-repeat center center !important;
+    background-size: 30px 30px !important;
+}
+
+.gridder-nav.next {
+    width: 40px !important;
+    height: 34px !important;
+    cursor: pointer !important;
+    background: url(../images/next1.svg) no-repeat center center !important;
+    background-size: 30px 30px !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .gridder-wrapper {
+        width: 100%;
+        height: auto;
+        float: left;
+        overflow: hidden;
+        padding-bottom: 70px;
+        -webkit-transform: translateX(-0%);
+        -moz-transform: translateX(-0%);
+        -ms-transform: translateX(-0%);
+        -o-transform: translateX(-0%);
+        transform: translateX(-0%);
+    }
+
+    .gridder-show {
+        display: block;
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-top: 0px;
+        color: #fff;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    .gridder-padding {
+        width: 100%;
+        height: atuo;
+        max-width: 1200px;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    .gridder-navigation {
+        position: absolute;
+        width: 130px;
+        margin-top: 20px;
+        margin-right: auto;
+        margin-left: 0;
+        z-index: 2000;
+        left: inherit;
+        right: 100px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .gridder-list {
+            width: 47%;
+        }
+		.gridder-wrapper{
+			padding-bottom: 20px;
+		}
+		.gridder-show-in {
+			max-width: 800px !important;
+			position: relative !important;
+			padding: 120px 20px 0px 20px !important;
+		}
+		.gridder-navigation {
+			position: absolute;
+			width: 130px;
+			margin-top: 40px;
+			margin-right: 20px;
+			margin-left: auto;
+			z-index: 2000;
+			left: auto;
+			right: 0px;
+		}
+
+    }
+    @media only screen and (max-width: 740px) {
+        .gridder-list {
+            width: 46%;
+        }
+    }
+    @media only screen and (max-width: 680px) {
+        .gridder-list {
+            width: 45%;
+        }
+
+        .in-button2 {
+            margin-left: 0px
+        }
+    }
+    @media only screen and (max-width: 520px) {
+        .gridder-list {
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        .in-button2 {
+            margin-left: 0px;
+            margin-top: 20px;
+            display: block;
+        }
+    }
+
+
+
+
+
